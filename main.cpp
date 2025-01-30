@@ -1,5 +1,5 @@
 /**PRESENTACION***
-NOMBRE: Juan Manuel Valdez Lopez
+NOMBRE: Christian Jair Gomez Jimenez
 FECHA: 4 de Febrero de 2025
 PROGRAMA: HolaMundo.cpp
 CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
