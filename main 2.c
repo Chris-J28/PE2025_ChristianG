@@ -1,6 +1,6 @@
 /**PRESENTACION***
 NOMBRE: Christian Jair Gomez Jimenez
-FECHA: 20 de Enero de 2025
+FECHA: 4 de Febrero de 2025
 PROGRAMA: Imprimir datos.c
 CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
 PROFESOR: Sergio Franco Casillas
