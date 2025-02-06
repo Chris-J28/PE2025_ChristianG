@@ -1,3 +1,11 @@
+/**PRESENTACION***
+NOMBRE: Christian Jair Gomez Jimenez
+FECHA: 6 de Febrero de 2025
+PROGRAMA: Cadenas de control y secuencias de escape.cpp
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Programa para verificar el uso de control y secuencias de escape
+************************/
 #include <iostream>
 #include <cstdio>
 
