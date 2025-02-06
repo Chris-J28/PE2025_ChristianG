@@ -1,3 +1,0 @@
-C:/Users/chris/OneDrive/Escritorio/Progra E/cmake-build-debug/CMakeFiles/Progra_E.dir
-C:/Users/chris/OneDrive/Escritorio/Progra E/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/chris/OneDrive/Escritorio/Progra E/cmake-build-debug/CMakeFiles/rebuild_cache.dir
