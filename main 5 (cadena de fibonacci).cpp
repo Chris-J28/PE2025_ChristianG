@@ -1,6 +1,14 @@
+/**PRESENTACION***
+NOMBRE: Christian Jair Gomez Jimenez
+FECHA: 6 de Febrero de 2025
+PROGRAMA: Cadena de Fribonacci
+CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
+PROFESOR: Sergio Franco Casillas
+DESCRIPCION: Programa para imprimir la cadena de Fribonacci, con ciclos que el usuario decida y com el limite determinado por el
+************************/
 #include <iostream>
 using namespace std;
-
+//incio main
 int main() {
     int opcion, limite,a = 0, b = 1, temp;
     char continuar;
@@ -43,4 +51,4 @@ int main() {
     } while (continuar == 's' || continuar == 'S');
 
     return 0;
-}
+}// fin main
