@@ -8,98 +8,98 @@ DESCRIPCION: Programa para modificar un arreglo
 ************************/
 #include <iostream>
 using namespace std;
-
-const int EpaciosMax = 10;
-
-void mostrarArreglo(int arreglo[], int tamaño) {
-    cout << "Arreglo: ";
-    for (int i = 0; i < tamaño; i++) {
-        cout << arreglo[i] << " ";}
-    cout << endl;}
-
-int sumarArreglo(int arreglo[], int tamaño) {
-    int suma = 0;
-    for (int i = 0; i < tamaño; i++) {
-        suma += arreglo[i];}
-    return suma;}
-
-void insertarValor(int arreglo[], int &tamaño, int valor) {
-    if (tamaño < EpaciosMax) {
-        arreglo[tamaño] = valor;
-        tamaño++;
-    } else {
-        cout << "El arreglo está lleno, no se puede agregar más valores." << endl;}
+//Funcion
+void intro() {
+    cout<<"** Bienvenido, selecciona una opcion para realizar a tu arreglo**"<<endl;
+    cout<<"**************"<<endl;
+    cout<<"1. añadir elemento"<<endl;
+    cout<<"2. Mostar arreglo"<<endl;
+    cout<<"3. Mostrar suma de los elementos del arreglo"<<endl;
+    cout<<"4. Editar algun elemento"<<endl;
+    cout<<"5. Borrar un elemento"<<endl;
+    cout<<"6. Vaciar arreglo"<<endl;
+    cout<<"7. Salir"<<endl;
 }
-
-void editarValor(int arreglo[], int indice, int valor) {
-    if (indice >= 0 && indice < EpaciosMax) {
-        arreglo[indice] = valor;
-    } else {
-        cout << "Índice fuera de rango." << endl;}
-}
-
-void borrarValor(int arreglo[], int &tamaño, int indice) {
-    if (indice >= 0 && indice < tamaño) {
-        for (int i = indice; i < tamaño - 1; i++) {
-            arreglo[i] = arreglo[i + 1];}
-        tamaño--;
-    } else {
-        cout << "Índice fuera de rango." << endl;}
-}
-
-void vaciarArreglo(int arreglo[], int &tamaño) {
-    tamaño = 0;}
-
+//inicio de main
 int main() {
-    int arreglo[EpaciosMax];
-    int tamaño = 0;
-    int opcion, valor, indice;
+    float arreglo[10];
+    bool menu = true;
+    char opcion;
+    float valor;
+    int posicion = 0;
+    float suma = 0;
+    int indice;
 
-    do {
-        cout << "1. Insertar valor" << endl;
-        cout << "2. Mostrar lista de valores" << endl;
-        cout << "3. Mostrar sumatoria de todos los elementos" << endl;
-        cout << "4. Editar un elemento" << endl;
-        cout << "5. Borrar un elemento" << endl;
-        cout << "6. Vaciar arreglo" << endl;
-        cout << "7. Salir" << endl;
-        cout << "Elige una opcion: ";
+    //iniciamos ciclo del menu
+    while (menu==true) {
+        intro();
         cin >> opcion;
 
         switch (opcion) {
-            case 1:
-                cout << "Introduce un valor: ";
-            cin >> valor;
-            insertarValor(arreglo, tamaño, valor);
+            case '1': {
+                if (posicion >= 0 || posicion < 10) {
+                    cout << "Ingrese un numero entero: ";
+                    cin >> valor;
+                    arreglo[posicion] = valor;
+                    posicion++;
+                }//fin if
+                else {
+                    cout<<"Valor fuera del rango"<<endl;
+                }//fin else
                 break;
-            case 2:
-                mostrarArreglo(arreglo, tamaño);
+            }//fin caso 1
+            //Inicio case 2
+            case '2': {
+                for (int i = 0; i<posicion; i++) {
+                    cout<< "[Posicion " << i <<  " es " <<arreglo[i] << "]"<<endl;
+                }//fin del for
                 break;
-            case 3:
-                cout << "La suma de todos los elementos es: " << sumarArreglo(arreglo, tamaño) << endl;
+            }//fin case 2
+            //inicio caso 3
+            case '3': {
+                for (int i = 0; i<posicion; i++) {
+                    suma += arreglo[i];
+                }cout<<"Suma = "<<suma<<endl;
                 break;
-            case 4:
-                cout << "Introduce el indice del elemento a editar: ";
+            }//fin caso 3
+            //inicio case 4
+            case '4':{
+                cout<<"¿En que indice deseas editar su elemento?"<<endl;
+                cin>>indice;
+                if(posicion>0 && indice>=0 && indice<posicion){
+                    cout<<"¿Que valor quieres ingresar?"<<endl;
+                    cin>>valor;
+                    arreglo[indice] = valor;
+                    cout<<"Valor editado con exito"<<endl;
+                }else {cout<<"Indice no valido, intentalo de nuevo"<<endl;}
+                break;
+                }//fin case 4
+            //incio case 5
+            case'5': {
+                cout << "¿En que indice deseas borrar su elemento?" << endl;
                 cin >> indice;
-                cout << "Introduce el nuevo valor: ";
-                cin >> valor;
-                editarValor(arreglo, indice, valor);
+                if (posicion > 0 && indice >= 0 && indice < posicion) {
+                    for (int i = indice; i < posicion  ; i++)
+                        posicion--;
+                    cout << "Valor borrado con exito" << endl;
+                } else cout << "Indice no valido" << endl;
                 break;
-            case 5:
-                cout << "Introduce el indice del elemento a borrar: ";
-                cin >> indice;
-                borrarValor(arreglo, tamaño, indice);
+                  } //fin case 5
+              //inicio case 6
+               case '6': {
+                posicion=0;
+                cout<<"Arreglo vaciado"<<endl;
                 break;
-            case 6:
-                vaciarArreglo(arreglo, tamaño);
-            cout << "El arreglo ha sido vaciado." << endl;
-            break;
-            case 7:
-                cout << "Saliendo..." << endl;
-            break;
-            default:
-                cout << "Opcion no valida. Inténtalo de nuevo." << endl;
-        }
-    } while (opcion != 7);
+               }//fin case 6
+                case '7': {//inicio case 7
+                cout<<"Gracias por utilizar el programa"<<endl;
+                menu = false;
+                break;
+                }//fin case 7
+
+            }//fin del switch
+             }//fin del while
     return 0;
-}
+    }//fin del main
+
+
