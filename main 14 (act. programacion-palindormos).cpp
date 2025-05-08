@@ -4,7 +4,7 @@
 //PROGRAMA: Actividad de programacion
 //CENTRO UNIVERSITARIO DE LOS ALTOS / UNIVERSIDAD DE GUADALAJARA
 //PROFESOR: Sergio Franco Casillas
-//DESCRIPCION: Programa para verificar siuna palabra es palindromo o no, y contar vocales y consonantes
+//DESCRIPCION: Programa para verificar si una palabra es palindromo o no, y contar vocales y consonantes
 #include <iostream>
 #include <string>
 using namespace std;
